@@ -83,7 +83,6 @@
 
 // export default About;
 
-
 import React from "react";
 import { motion } from "framer-motion";
 import { aboutInfo } from "../assets/assets";
@@ -108,7 +107,7 @@ const About = () => {
 
           <p className="text-gray-400 mt-4 max-w-3xl mx-auto">
             Get to know more about my journey, experience, and passion for
-            building modern web applications.
+            building modern, scalable web applications.
           </p>
         </div>
 
@@ -127,10 +126,10 @@ const About = () => {
           <p className="text-gray-300 leading-8 mb-6">
             I’m a passionate{" "}
             <span className="text-purple font-semibold">
-              MERN Stack Developer
+              Frontend-Focused Full Stack Developer
             </span>{" "}
-            currently pursuing B.Tech in Computer Science & Design.
-            I have completed internships at{" "}
+            with a Bachelor's degree in Computer Science and Engineering.
+            I have completed professional internships at{" "}
             <span className="text-white font-medium">Softpro India</span> and{" "}
             <span className="text-white font-medium">
               Zidio Development
@@ -140,17 +139,29 @@ const About = () => {
           </p>
 
           <p className="text-gray-300 leading-8 mb-6">
-            I enjoy designing responsive user interfaces, building scalable
-            backend APIs, integrating databases, and writing clean,
-            maintainable code. I always strive to create applications that are
-            fast, secure, and user-friendly.
+            I enjoy designing responsive user interfaces, developing scalable
+            REST APIs, integrating databases, and writing clean, maintainable
+            code. My goal is to create secure, high-performance applications
+            that provide an excellent user experience while following modern
+            development practices.
           </p>
 
           <p className="text-gray-300 leading-8">
-            Currently, I’m focused on improving my Full Stack Development
-            skills, strengthening my problem-solving abilities, and preparing
-            for Software Developer opportunities while continuously learning
-            modern technologies.
+            As a recent Computer Science graduate, I am actively seeking
+            opportunities as a{" "}
+            <span className="text-purple font-semibold">
+              Frontend Developer
+            </span>
+            ,{" "}
+            <span className="text-purple font-semibold">
+              Full Stack Developer
+            </span>{" "}
+            or{" "}
+            <span className="text-purple font-semibold">
+              Software Engineer
+            </span>
+            . I am eager to contribute to innovative projects, solve real-world
+            challenges, and continuously enhance my technical expertise.
           </p>
         </motion.div>
 
@@ -161,48 +172,32 @@ const About = () => {
             whileHover={{ y: -8 }}
             className="bg-dark-300 rounded-2xl p-6 text-center border border-gray-700 hover:border-purple transition-all duration-300"
           >
-            <h3 className="text-4xl font-bold text-purple mb-2">
-              10+
-            </h3>
-            <p className="text-gray-400">
-              Projects Completed
-            </p>
+            <h3 className="text-4xl font-bold text-purple mb-2">6+</h3>
+            <p className="text-gray-400">Projects Completed</p>
           </motion.div>
 
           <motion.div
             whileHover={{ y: -8 }}
             className="bg-dark-300 rounded-2xl p-6 text-center border border-gray-700 hover:border-purple transition-all duration-300"
           >
-            <h3 className="text-4xl font-bold text-purple mb-2">
-              2
-            </h3>
-            <p className="text-gray-400">
-              Professional Internships
-            </p>
+            <h3 className="text-4xl font-bold text-purple mb-2">2</h3>
+            <p className="text-gray-400">Professional Internships</p>
           </motion.div>
 
           <motion.div
             whileHover={{ y: -8 }}
             className="bg-dark-300 rounded-2xl p-6 text-center border border-gray-700 hover:border-purple transition-all duration-300"
           >
-            <h3 className="text-4xl font-bold text-purple mb-2">
-              MERN
-            </h3>
-            <p className="text-gray-400">
-              Full Stack Expertise
-            </p>
+            <h3 className="text-4xl font-bold text-purple mb-2">MERN</h3>
+            <p className="text-gray-400">Tech Stack</p>
           </motion.div>
 
           <motion.div
             whileHover={{ y: -8 }}
             className="bg-dark-300 rounded-2xl p-6 text-center border border-gray-700 hover:border-purple transition-all duration-300"
           >
-            <h3 className="text-4xl font-bold text-purple mb-2">
-              2027
-            </h3>
-            <p className="text-gray-400">
-              Graduation Year
-            </p>
+            <h3 className="text-4xl font-bold text-purple mb-2">2026</h3>
+            <p className="text-gray-400">B.Tech Graduate</p>
           </motion.div>
 
         </div>
