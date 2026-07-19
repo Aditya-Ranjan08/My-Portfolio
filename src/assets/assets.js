@@ -41,31 +41,89 @@ export const aboutInfo = [
 
 
 
+// export const skills = [
+//   {
+//     title: 'Frontend Development',
+//     icon: FaReact,
+//     description: 'Building responsive and interactive user interfaces with modern frameworks.',
+//     tags: ['React.js', 'HTML', 'CSS', 'Tailwind CSS', 'Bootstrap']
+//   },
+//   {
+//     title: 'Backend Development',
+//     icon: FaServer,
+//     description: 'Creating robust server-side applications and RESTful APIs.',
+//     tags: ['Node.js', 'Express.js', 'Clerk Auth', 'Socket.io', 'Javascript']
+//   },
+//   {
+//     title: 'Database Management',
+//     icon: FaDatabase,
+//     description: 'Designing and optimizing databases for performance and scalability.',
+//     tags: ['Supabase', 'MongoDB', 'MySQL', 'PostgreSQL']
+//   },
+ 
+//   {
+//     title: 'Tools & Technologies',
+//     icon: FaTools,
+//     description: 'Essential tools and technologies I use in my development workflow.',
+//     tags: ['Git', 'GitHub', 'VS Code', 'Postman']
+//   }
+// ];
+
+
 export const skills = [
   {
-    title: 'Frontend Development',
+    title: "Frontend Development",
     icon: FaReact,
-    description: 'Building responsive and interactive user interfaces with modern frameworks.',
-    tags: ['React.js', 'HTML', 'CSS', 'Tailwind CSS', 'Bootstrap']
+    description:
+      "Creating responsive, interactive, and modern web interfaces with the latest frontend technologies.",
+    tags: [
+      "React.js",
+      "JavaScript",
+      "HTML5",
+      "CSS3",
+      "Tailwind CSS",
+      "Bootstrap"
+    ]
   },
+
   {
-    title: 'Backend Development',
+    title: "Backend Development",
     icon: FaServer,
-    description: 'Creating robust server-side applications and RESTful APIs.',
-    tags: ['Node.js', 'Express.js', 'Clerk Auth', 'Socket.io', 'Javascript']
+    description:
+      "Building secure, scalable REST APIs and backend services with authentication and database integration.",
+    tags: [
+      "Node.js",
+      "Express.js",
+      "REST API",
+      "JWT",
+      "Socket.io"
+    ]
   },
+
   {
-    title: 'Database Management',
+    title: "Database Management",
     icon: FaDatabase,
-    description: 'Designing and optimizing databases for performance and scalability.',
-    tags: ['Supabase', 'MongoDB', 'MySQL', 'PostgreSQL']
+    description:
+      "Designing efficient databases and optimizing data storage for high-performance applications.",
+    tags: [
+      "MongoDB",
+      "MySQL",
+      "PostgreSQL",
+      "Supabase"
+    ]
   },
- 
+
   {
-    title: 'Tools & Technologies',
+    title: "Tools & Workflow",
     icon: FaTools,
-    description: 'Essential tools and technologies I use in my development workflow.',
-    tags: ['Git', 'GitHub', 'VS Code', 'Postman']
+    description:
+      "Modern development workflow with version control, testing, debugging, and deployment tools.",
+    tags: [
+      "Git",
+      "GitHub",
+      "VS Code",
+      "Postman"
+    ]
   }
 ];
 
