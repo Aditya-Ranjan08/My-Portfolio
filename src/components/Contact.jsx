@@ -1,18 +1,15 @@
-import React from "react";
-import { motion } from "framer-motion";
+import { motion as Motion, useReducedMotion } from "framer-motion";
 import Swal from "sweetalert2";
 
 import {
-  FaDribbble,
   FaEnvelope,
   FaGithub,
   FaLinkedin,
-  FaMapMarkerAlt,
   FaPhone,
-  FaTwitter,
 } from "react-icons/fa";
 
 const Contact = () => {
+  const shouldReduceMotion = useReducedMotion();
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -69,137 +66,130 @@ const Contact = () => {
     }
   };
 
+  const reveal = (delay = 0) => ({
+    initial: shouldReduceMotion ? false : { opacity: 0, y: 16 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, amount: 0.15 },
+    transition: { duration: shouldReduceMotion ? 0 : 0.5, delay: shouldReduceMotion ? 0 : delay, ease: "easeOut" },
+  });
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, ease: "easeOut" }}
-      viewport={{ once: false, amount: 0.2 }}
+    <section
       id="contact"
-      className="py-20 bg-dark-200"
+      aria-labelledby="contact-heading"
+      className="bg-dark-200 py-16 sm:py-20"
     >
-      <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-4">
-          Get IN <span className="text-purple">Touch</span>
-        </h2>
+      <div className="mx-auto max-w-6xl px-5 sm:px-8">
+        <Motion.div {...reveal()} className="mb-9 sm:mb-12">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-purple">Contact</p>
+          <h2 id="contact-heading" className="text-3xl font-bold leading-tight text-white sm:text-4xl">
+            Let&apos;s Build Something Together
+          </h2>
+          <p className="mt-4 max-w-2xl text-base leading-7 text-gray-400 sm:text-lg">
+            I&apos;m open to software development, frontend, React.js and full-stack opportunities.
+          </p>
+        </Motion.div>
 
-        <p className="text-gray-400 text-center max-w-2xl mx-auto mb-16">
-          Have a project in mind or just want to chat? Let's talk!
-        </p>
+        <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12">
+          <Motion.div {...reveal(0.08)} className="space-y-6">
+            <p className="max-w-md text-base leading-7 text-gray-300">
+              I&apos;m an entry-level developer looking to contribute, learn, and grow with a team building useful web applications.
+            </p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            <ul aria-label="Contact information" className="space-y-4">
+              <li className="flex items-start gap-3">
+                <FaEnvelope aria-hidden="true" className="mt-1 h-4 w-4 shrink-0 text-purple" />
+                <a href="mailto:adityar0807@gmail.com" className="text-sm text-gray-300 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-purple sm:text-base">
+                  adityar0807@gmail.com
+                </a>
+              </li>
+              <li className="flex items-start gap-3">
+                <FaPhone aria-hidden="true" className="mt-1 h-4 w-4 shrink-0 text-purple" />
+                <a href="tel:9628137350" className="text-sm text-gray-300 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-purple sm:text-base">
+                  9628137355
+                </a>
+              </li>
+            </ul>
 
-          {/* Contact Form */}
-          <div>
-            <form onSubmit={onSubmit} className="space-y-6">
+            <div className="flex flex-wrap gap-3 pt-1">
+              <a
+                href="https://github.com/Aditya-Ranjan08"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button-control button-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple"
+              >
+                <FaGithub aria-hidden="true" /> GitHub
+              </a>
+              <a
+                href="https://www.linkedin.com/in/aditya-ranjan-b3a85836b/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button-control button-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple"
+              >
+                <FaLinkedin aria-hidden="true" /> LinkedIn
+              </a>
+            </div>
+          </Motion.div>
 
+          <Motion.div {...reveal(0.16)}>
+            <form onSubmit={onSubmit} className="space-y-5 rounded-lg border border-white/10 bg-dark-300 p-5 sm:p-6">
               <div>
-                <label className="block text-gray-300 mb-2">
+                <label htmlFor="contact-name" className="mb-2 block text-sm font-medium text-gray-200">
                   Your Name
                 </label>
                 <input
+                  id="contact-name"
                   name="name"
                   type="text"
+                  autoComplete="name"
+                  placeholder="Enter your name"
                   required
-                  className="w-full bg-dark-300 border border-dark-400 rounded-lg px-4 py-3 outline-none"
+                  className="min-h-11 w-full rounded-md border border-dark-400 bg-dark-200 px-3.5 py-2.5 text-base text-white placeholder:text-gray-500 focus:border-purple focus:outline-none focus:ring-2 focus:ring-purple/30"
                 />
               </div>
 
               <div>
-                <label className="block text-gray-300 mb-2">
+                <label htmlFor="contact-email" className="mb-2 block text-sm font-medium text-gray-200">
                   Email Address
                 </label>
                 <input
+                  id="contact-email"
                   name="email"
                   type="email"
+                  autoComplete="email"
+                  placeholder="you@example.com"
                   required
-                  className="w-full bg-dark-300 border border-dark-400 rounded-lg px-4 py-3 outline-none"
+                  className="min-h-11 w-full rounded-md border border-dark-400 bg-dark-200 px-3.5 py-2.5 text-base text-white placeholder:text-gray-500 focus:border-purple focus:outline-none focus:ring-2 focus:ring-purple/30"
                 />
               </div>
 
               <div>
-                <label className="block text-gray-300 mb-2">
+                <label htmlFor="contact-message" className="mb-2 block text-sm font-medium text-gray-200">
                   Your Message
                 </label>
                 <textarea
+                  id="contact-message"
                   name="message"
+                  rows={5}
+                  placeholder="Tell me a little about what you have in mind"
                   required
-                  className="w-full h-40 bg-dark-300 border border-dark-400 rounded-lg px-4 py-3 outline-none"
+                  className="w-full resize-y rounded-md border border-dark-400 bg-dark-200 px-3.5 py-3 text-base text-white placeholder:text-gray-500 focus:border-purple focus:outline-none focus:ring-2 focus:ring-purple/30"
                 />
               </div>
 
-              <button
+              <Motion.button
                 type="submit"
-                className="w-full px-6 py-3 bg-purple rounded-lg font-medium hover:bg-purple-700 transition duration-300 cursor-pointer"
+                whileHover={shouldReduceMotion ? undefined : { y: -2 }}
+                whileTap={shouldReduceMotion ? undefined : { scale: 0.99 }}
+                className="button-control button-primary w-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple"
               >
                 Send Message
-              </button>
-
+              </Motion.button>
             </form>
-          </div>
-
-          {/* Contact Info */}
-          <div className="space-y-8">
-
-            <div className="flex items-start">
-              <div className="text-purple text-2xl mr-4">
-                <FaMapMarkerAlt />
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-2">Location</h3>
-                <p className="text-gray-400">Lucknow, Uttar Pradesh</p>
-              </div>
-            </div>
-
-            <div className="flex items-start">
-              <div className="text-purple text-2xl mr-4">
-                <FaEnvelope />
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-2">Email</h3>
-                <p className="text-gray-400">adityaranjan9628@gmail.com</p>
-              </div>
-            </div>
-
-            <div className="flex items-start">
-              <div className="text-purple text-2xl mr-4">
-                <FaPhone />
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-2">Phone</h3>
-                <p className="text-gray-400">9628137350</p>
-              </div>
-            </div>
-
-            {/* Social Icons */}
-            <div className="pt-4">
-              <h3 className="text-lg font-semibold mb-4">Follow Me</h3>
-              <div className="flex space-x-4">
-
-                <a href="https://github.com/Aditya-Ranjan08" className="w-12 h-12 rounded-full bg-dark-300 flex items-center justify-center text-purple hover:bg-purple hover:text-white transition duration-300">
-                  <FaGithub />
-                </a>
-
-                <a href="https://www.linkedin.com/in/aditya-ranjan-b3a85836b/" className="w-12 h-12 rounded-full bg-dark-300 flex items-center justify-center text-orange-400 hover:bg-orange-400 hover:text-white transition duration-300">
-                  <FaLinkedin />
-                </a>
-
-                <a href="#" className="w-12 h-12 rounded-full bg-dark-300 flex items-center justify-center text-blue-400 hover:bg-blue-400 hover:text-white transition duration-300">
-                  <FaTwitter />
-                </a>
-
-                <a href="#" className="w-12 h-12 rounded-full bg-dark-300 flex items-center justify-center text-pink hover:bg-pink hover:text-white transition duration-300">
-                  <FaDribbble />
-                </a>
-
-              </div>
-            </div>
-
-          </div>
-
+          </Motion.div>
         </div>
       </div>
-    </motion.div>
+    </section>
   );
 };
 

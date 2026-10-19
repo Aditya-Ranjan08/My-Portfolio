@@ -1,65 +1,80 @@
-import React from 'react'
-import { motion } from 'framer-motion'
+import { motion as Motion, useReducedMotion } from 'framer-motion'
 import { workData } from '../assets/assets'
 
 const Work = () => {
+  const shouldReduceMotion = useReducedMotion()
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, ease: "easeOut" }}
-      viewport={{ once: false, amount: 0.2 }}
+    <section
       id='experience'
-      className='py-20 bg-dark-100'
+      aria-labelledby='experience-heading'
+      className='bg-dark-100 py-16 sm:py-20'
     >
-      <div className='container mx-auto px-6'>
-        <h2 className='text-3xl font-bold text-center mb-4'>Internship
-          <span className='text-purple'> Experience</span>
+      <div className='mx-auto max-w-6xl px-5 sm:px-8'>
+        <div className='mb-9 text-center sm:mb-12'>
+          <h2 id='experience-heading' className='text-3xl font-bold text-white sm:text-4xl'>
+            Experience
         </h2>
-        <p className='text-gray-400 text-center max-w-2xl mx-auto mb-16'>
-          My professional training journey
-        </p>
-        <div className='max-w-3xl mx-auto'>
-          <div className='space-y-12'>
-            {
-              workData.map((data, index) => (
-                <div key={index}
-                  className='relative pl-12 before:content-[""] before:absolute before:left-0 before:top-0 before:w-[2px]
-                  before:h-full before:bg-purple cursor-pointer hover:-translate-y-2 transition duration-300'
-                >
-                  {/* timeline dot */}
-                  <div className='absolute left-[-0.5rem] top-0 w-4 h-4 rounded-full bg-purple border-4 border-dark-100'>
-                  </div>
+          <p className='mx-auto mt-4 max-w-2xl text-base leading-7 text-gray-400 sm:text-lg'>
+            Practical experience gained through internships and hands-on web development.
+          </p>
+        </div>
 
-                  {/* box */}
-                  <div className='bg-dark-300 rounded-2xl p-6'>
-                    <div className='flex justify-between items-start mb-2'>
-                      <h3 className='text-xl font-semibold'>
-                        {data.role}
-                      </h3>
-                      <span className='px-3 py-1 bg-purple/20 text-purple rounded-full text-xs md:text-sm'>{data.duration}</span>
-                    </div>
-                    <p className='text-gray-300 mb-2 font-medium'>{data.company}</p>
-                    <p className='text-gray-400 text-sm mb-4'>{data.description}</p>
-                    
-                    {/* Certificate Button Added Here */}
-                    <a 
-                      href={data.certificateLink} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className='inline-block px-4 py-2 border border-purple text-purple rounded-lg text-sm font-medium hover:bg-purple hover:text-white transition-colors duration-300'
-                    >
-                      View Certificate
-                    </a>
-
+        <div className='relative mx-auto max-w-4xl space-y-4 before:absolute before:bottom-6 before:left-1.75 before:top-6 before:w-px before:bg-purple/35 sm:space-y-5 sm:before:left-2'>
+          {workData.map((data, index) => (
+            <Motion.article
+              key={data.company}
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{
+                duration: shouldReduceMotion ? 0 : 0.5,
+                delay: shouldReduceMotion ? 0 : index * 0.1,
+                ease: 'easeOut',
+              }}
+              className='relative pl-7 sm:pl-10'
+            >
+              <span aria-hidden='true' className='absolute left-0 top-6 h-4 w-4 rounded-full border-[3px] border-dark-100 bg-purple shadow-[0_0_0_1px_rgba(139,92,246,0.5)] sm:left-0.5' />
+              <div className='rounded-lg border border-white/10 bg-dark-300 p-4 sm:p-6'>
+                <div className='flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-4'>
+                  <div>
+                    <h3 className='text-lg font-semibold leading-snug text-white sm:text-xl'>{data.role}</h3>
+                    <p className='mt-1 font-medium text-gray-300'>{data.company}</p>
                   </div>
+                  <time className='w-fit shrink-0 rounded-md border border-purple/25 bg-purple/10 px-2.5 py-1 text-xs font-medium text-purple sm:text-sm'>
+                    {data.duration}
+                  </time>
                 </div>
-              ))
-            }
-          </div>
+
+                <p className='mt-4 text-sm leading-6 text-gray-400 sm:text-base'>
+                  {data.description}
+                </p>
+
+                {data.technologies?.length > 0 && (
+                  <ul aria-label={`Technologies used at ${data.company}`} className='mt-4 flex flex-wrap gap-2'>
+                    {data.technologies.map((technology) => (
+                      <li key={technology} className='rounded border border-white/10 bg-dark-400/70 px-2.5 py-1 text-xs font-medium text-gray-300'>
+                        {technology}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                <a
+                  href={data.certificateLink}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  aria-label={`View ${data.company} internship certificate`}
+                  className='button-control button-accent-outline mt-4 w-fit focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple'
+                >
+                  View Certificate
+                </a>
+              </div>
+            </Motion.article>
+          ))}
         </div>
       </div>
-    </motion.div>
+    </section>
   )
 }
 

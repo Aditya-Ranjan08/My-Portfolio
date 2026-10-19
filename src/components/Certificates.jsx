@@ -1,68 +1,83 @@
-import React from 'react'
-import { motion } from 'framer-motion'
-import { certificationData } from '../assets/assets'
-import { FiAward, FiExternalLink } from 'react-icons/fi' 
+import { motion as Motion, useReducedMotion } from "framer-motion";
+import { FiAward, FiExternalLink } from "react-icons/fi";
+import { certificationData } from "../assets/assets";
 
 const Certificates = () => {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-      id='certificates'
-      className='py-20 bg-dark-100'
+    <section
+      id="certificates"
+      aria-labelledby="certificates-heading"
+      className="bg-dark-100 py-16 sm:py-20"
     >
-      <div className='container mx-auto px-6'>
-        <h2 className='text-3xl font-bold text-center mb-4'>
-          Certifications & <span className='text-purple'>Workshops</span>
-        </h2>
-        <p className='text-gray-400 text-center max-w-2xl mx-auto mb-16'>
-          Professional training and technical workshops I have completed
-        </p>
+      <div className="mx-auto max-w-6xl px-5 sm:px-8">
+        <div className="mb-9 text-center sm:mb-12">
+          <h2 id="certificates-heading" className="text-3xl font-bold text-white sm:text-4xl">
+            Certifications <span className="text-purple">&amp; Workshops</span>
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-gray-400 sm:text-lg">
+            Certifications and practical learning experiences that support my development journey.
+          </p>
+        </div>
 
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto'>
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-4 sm:gap-5 md:grid-cols-2 xl:grid-cols-3">
           {certificationData.map((cert, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className='group bg-dark-300 border border-white/5 p-6 rounded-2xl hover:border-purple/50 transition-all duration-300 relative overflow-hidden'
+            <Motion.article
+              key={cert.title}
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 20, scale: 0.98 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, amount: 0.15 }}
+              transition={{
+                duration: shouldReduceMotion ? 0 : 0.5,
+                delay: shouldReduceMotion ? 0 : index * 0.08,
+                ease: "easeOut",
+              }}
+              whileHover={shouldReduceMotion ? undefined : { y: -4 }}
+              className="flex h-full flex-col rounded-lg border border-white/10 bg-dark-300 p-5 shadow-sm transition-[border-color,box-shadow] duration-300 hover:border-purple/40 hover:shadow-lg hover:shadow-black/15 motion-reduce:transition-none sm:p-6"
             >
-              {/* Background Glow Effect */}
-              <div className='absolute -right-8 -top-8 w-24 h-24 bg-purple/10 rounded-full blur-3xl group-hover:bg-purple/20 transition-all'></div>
-
-              <div className='flex items-start justify-between mb-4'>
-                <div className='p-3 bg-purple/10 rounded-xl text-purple group-hover:bg-purple group-hover:text-white transition-all duration-300'>
-                  <FiAward size={24} />
-                </div>
-                <span className='text-xs text-gray-500 font-medium'>{cert.date}</span>
+              <div className="flex items-start justify-between gap-4">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-purple/25 bg-purple/10 text-purple">
+                  <FiAward aria-hidden="true" size={19} />
+                </span>
+                {cert.date && (
+                  <time className="pt-1 text-right text-xs font-medium text-gray-400 sm:text-sm">
+                    {cert.date}
+                  </time>
+                )}
               </div>
 
-              <h3 className='text-lg font-bold mb-1 group-hover:text-purple transition-colors'>
+              <h3 className="mt-4 text-lg font-semibold leading-snug text-white">
                 {cert.title}
               </h3>
-              <p className='text-purple text-sm font-medium mb-3'>
-                {cert.organization}
-              </p>
-              <p className='text-gray-400 text-sm mb-6 line-clamp-2'>
-                {cert.description}
-              </p>
+              {cert.organization && (
+                <p className="mt-1 text-sm font-medium text-purple">
+                  {cert.organization}
+                </p>
+              )}
+              {cert.description && (
+                <p className="mt-3 text-sm leading-6 text-gray-400">
+                  {cert.description}
+                </p>
+              )}
 
-              <a
-                href={cert.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className='flex items-center gap-2 text-sm font-semibold text-white group-hover:text-purple transition-colors'
-              >
-                View Certificate <FiExternalLink size={14} />
-              </a>
-            </motion.div>
+              {cert.link && (
+                <a
+                  href={cert.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`View certificate: ${cert.title}`}
+                  className="button-control button-accent-outline mt-auto w-fit justify-start focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-purple"
+                >
+                  View Certificate <FiExternalLink aria-hidden="true" size={14} />
+                </a>
+              )}
+            </Motion.article>
           ))}
         </div>
       </div>
-    </motion.div>
-  )
-}
+    </section>
+  );
+};
 
-export default Certificates
+export default Certificates;

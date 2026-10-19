@@ -1,4 +1,5 @@
-import { FaLightbulb, FaPaintBrush, FaCode, FaReact, FaServer, FaMobileAlt, FaTools, FaNodeJs, FaStripe, FaVuejs, FaFire, FaDatabase, FaCloud, FaRobot } from 'react-icons/fa';
+import { FaBootstrap, FaCloud, FaCode, FaCss3Alt, FaDatabase, FaGitAlt, FaGithub, FaHtml5, FaJs, FaKey, FaLightbulb, FaMobileAlt, FaNodeJs, FaPaintBrush, FaReact, FaServer, FaTools } from 'react-icons/fa';
+import { VscVscode } from 'react-icons/vsc';
 
 import adityaImg from '../assets/aditya.png';
 
@@ -24,105 +25,78 @@ export const assets = {
 
 
 export const aboutInfo = [
-   
     {
-      icon: FaPaintBrush,
-      title: 'Design Oriented',
-      description: 'Beautiful design and user experience are at the heart of everything I create.',
-      color: 'text-pink'
+      icon: FaReact,
+      title: 'React & Frontend Development',
+      description: 'Building responsive interfaces with React.js and modern web technologies.'
     },
     {
-      icon: FaCode,
-      title: 'Clean Code',
-      description: 'I write maintainable, efficient code following best practices and modern patterns.',
-      color: 'text-blue'
+      icon: FaServer,
+      title: 'Full Stack Development',
+      description: 'Working across APIs, authentication, databases, and application workflows.'
+    },
+    {
+      icon: FaLightbulb,
+      title: 'Problem Solving',
+      description: 'Learning through hands-on projects and practical development challenges.'
     }
   ];
 
 
 
-// export const skills = [
-//   {
-//     title: 'Frontend Development',
-//     icon: FaReact,
-//     description: 'Building responsive and interactive user interfaces with modern frameworks.',
-//     tags: ['React.js', 'HTML', 'CSS', 'Tailwind CSS', 'Bootstrap']
-//   },
-//   {
-//     title: 'Backend Development',
-//     icon: FaServer,
-//     description: 'Creating robust server-side applications and RESTful APIs.',
-//     tags: ['Node.js', 'Express.js', 'Clerk Auth', 'Socket.io', 'Javascript']
-//   },
-//   {
-//     title: 'Database Management',
-//     icon: FaDatabase,
-//     description: 'Designing and optimizing databases for performance and scalability.',
-//     tags: ['Supabase', 'MongoDB', 'MySQL', 'PostgreSQL']
-//   },
- 
-//   {
-//     title: 'Tools & Technologies',
-//     icon: FaTools,
-//     description: 'Essential tools and technologies I use in my development workflow.',
-//     tags: ['Git', 'GitHub', 'VS Code', 'Postman']
-//   }
-// ];
+
 
 
 export const skills = [
   {
     title: "Frontend Development",
     icon: FaReact,
-    description:
-      "Creating responsive, interactive, and modern web interfaces with the latest frontend technologies.",
-    tags: [
-      "React.js",
-      "JavaScript",
-      "HTML5",
-      "CSS3",
-      "Tailwind CSS",
-      "Bootstrap"
+    description: "React-focused interface development, responsive layouts, and browser-based styling.",
+    technologies: [
+      { name: "React.js", icon: FaReact, primary: true },
+      { name: "JavaScript", icon: FaJs, secondary: true },
+      { name: "HTML5", icon: FaHtml5 },
+      { name: "CSS3", icon: FaCss3Alt },
+      { name: "Tailwind CSS", icon: FaCode },
+      { name: "Bootstrap", icon: FaBootstrap },
+      { name: "Responsive Web Design", icon: FaMobileAlt },
     ]
   },
 
   {
     title: "Backend Development",
     icon: FaServer,
-    description:
-      "Building secure, scalable REST APIs and backend services with authentication and database integration.",
-    tags: [
-      "Node.js",
-      "Express.js",
-      "REST API",
-      "JWT",
-      "Socket.io"
+    description: "Server-side development, API integration, and authentication flows.",
+    technologies: [
+      { name: "Node.js", icon: FaNodeJs, secondary: true },
+      { name: "Express.js", icon: FaServer, secondary: true },
+      { name: "REST APIs", icon: FaCode, secondary: true },
+      { name: "JWT Authentication", icon: FaKey, secondary: true },
+      { name: "CRUD Operations", icon: FaCode },
     ]
   },
 
   {
-    title: "Database Management",
+    title: "Databases",
     icon: FaDatabase,
-    description:
-      "Designing efficient databases and optimizing data storage for high-performance applications.",
-    tags: [
-      "MongoDB",
-      "MySQL",
-      "PostgreSQL",
-      "Supabase"
+    description: "Working with document, relational, and hosted database services.",
+    technologies: [
+      { name: "MongoDB", icon: FaDatabase, secondary: true },
+      { name: "MySQL", icon: FaDatabase },
+      { name: "Supabase", icon: FaDatabase },
     ]
   },
 
   {
     title: "Tools & Workflow",
     icon: FaTools,
-    description:
-      "Modern development workflow with version control, testing, debugging, and deployment tools.",
-    tags: [
-      "Git",
-      "GitHub",
-      "VS Code",
-      "Postman"
+    description: "Version control, API testing, code editing, and deployment workflow.",
+    technologies: [
+      { name: "Git", icon: FaGitAlt },
+      { name: "GitHub", icon: FaGithub },
+      { name: "VS Code", icon: VscVscode },
+      { name: "Postman", icon: FaTools },
+      { name: "Vercel", icon: FaCloud },
     ]
   }
 ];
@@ -132,25 +106,28 @@ export const skills = [
 export const projects = [
 {
     title: "Blogging Platform",
-    description: "A comprehensive blogging ecosystem featuring dedicated Admin and User panels. Includes a dynamic dashboard for content management, real-time analytics for post engagement, and secure role-based access control.",
+    category: "Full Stack",
+    description: "Full-stack blogging application with admin and user panels for creating and managing blog posts.",
     image: blogImg1,
-    tech: ["React", "Node.js", "MongoDB", "Express", "JWT", "Bootstrap"],
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Bootstrap"],
     demo: "https://blogging-platform-adi.vercel.app/",
     code: "https://github.com/Aditya-Ranjan08/Blogging-Platform.git",
   },
   {
-    title: " Job Portal",
-    description: "A high-performance job board built with a multi-user architecture. Features separate dashboards for Job Seekers and Recruiters, real-time job tracking, and seamless application workflows with enterprise-grade UI components.",
+    title: "Job Portal",
+    category: "Web Application",
+    description: "Job portal for discovering jobs, posting openings, and tracking applications.",
     image: jobImg2,
-    tech: ["React", "Supabase", "Clerk Auth", "Shadcn UI", "Tailwind"],
+    tech: ["React.js", "Clerk", "Supabase", "Shadcn UI", "Tailwind CSS"],
     demo: "https://job-portal-adi.vercel.app/", 
     code: "https://github.com/Aditya-Ranjan08/Job-Portal.git",
   },
   {
     title: "Resume Builder",
-    description: "A professional tool for creating industry-standard resumes. Integrated with automated formatting, secure cloud storage for profiles, and optimized data handling to help users generate PDF resumes instantly.",
+    category: "Full Stack",
+    description: "Full-stack resume builder for editing resume details and exporting a polished PDF.",
     image: resumeImg3,
-    tech: ["React", "Node.js", "MongoDB Atlas", "JWT", "CORS","Tailwind"],
+    tech: ["React.js", "Node.js", "MongoDB Atlas", "JWT", "CORS", "Tailwind CSS"],
     demo: "https://adi-resume-builder.vercel.app/",
     code: "https://github.com/Aditya-Ranjan08/Resume-Builder.git",
   }
@@ -165,14 +142,16 @@ export const workData = [
     role: "Web Development Intern",
     company: "Zidio Development",
     duration: "June 2025 - Sept 2025",
-    description: "Designed and architected responsive, user-centric web applications during a 3-month intensive internship. Focused on building scalable backend services and integrating them with modern frontend frameworks like React.js to ensure a seamless user experience. Gained hands-on experience in managing end-to-end development lifecycles and optimizing application performance.",
-    certificateLink: zidioCert // Imported variable use kiya
+    description: "Gained practical experience developing responsive web applications, integrating React.js interfaces with backend services, and working through the application development workflow.",
+    technologies: ["React.js","JWT Authentication","Tailwind CSS", "Bootstrap","CRUD Operations",],
+    certificateLink: zidioCert
   },
   {
-    role: "MERN Stack Intern",
+    role: "MERN Stack Development Intern",
     company: "Softpro India Computer Technologies",
     duration: "July 2025 - Aug 2025",
-    description: "Completed an intensive 45-day professional training and internship on the MERN stack, earning a prestigious A++ grade. Developed robust RESTful APIs using Node.js and Express.js while managing complex data structures in MongoDB. Specialized in creating dynamic, state-driven interfaces with React.js and implementing secure authentication workflows.",
+    description: "Completed a 45-day MERN stack training and internship, gaining practical experience with React.js interfaces, REST APIs, Node.js, Express.js, MongoDB, and authentication workflows.",
+    technologies: ["React.js", "Node.js", "Express.js", "REST APIs", "MongoDB", "JWT"],
     certificateLink: softproInternCert
   }
 ];

@@ -1,233 +1,79 @@
-// import React from "react";
-// import { motion } from "framer-motion";
-// import { aboutInfo, assets } from "../assets/assets";
-// import { data } from "react-router-dom";
-// import { div } from "framer-motion/client";
 
-// const About = () => {
-//   return (
-//     <motion.div
-//       initial={{ opacity: 0, y: 50 }}
-//       whileInView={{ opacity: 1, y: 0 }}
-//       transition={{ duration: 0.6, ease: "easeOut" }}
-//       viewport={{ once: true }}
-//       id="about"
-//       className="py-20 bg-dark-200"
-//     >
-//       <div className="container mx-0 px-6">
-//         {/* heading */}
-//         <h2 className="text-3xl font-bold text-center mb-4">
-//           About <span className="text-purple">Me</span>{" "}
-//         </h2>
-//         <p className="text-gray-400 text-center max-w-2xl mx-auto mb-16">
-//           Get to know more about my background and passion
-//         </p>
-//         {/* img & journey */}
-//         <div className=" flex flex-col md:flex-row items-center gap-12">
-//           {/* img */}
-//           <div className="md:w-1/2 rounded-2xl overflow-hidden">
-//             <motion.img
-//               initial={{ opacity: 0, y: 50 }}
-//               whileInView={{ opacity: 1, y: 0 }}
-//               transition={{ duration: 0.9, ease: "easeOut" }}
-//               viewport={{ once: false, amount: 0.2 }}
-//               className="w-full h-full object-cover"
-//               src={assets.adityaImg}
-//               alt="profile"
-//             />
-//           </div>
-//           {/* text content */}
-//           <motion.div
-//             initial={{ opacity: 0, y: 50 }}
-//             whileInView={{ opacity: 1, y: 0 }}
-//             transition={{ duration: 0.9, ease: "easeOut" }}
-//             viewport={{ once: false, amount: 0.2 }}
-//             className="md:w-1/2"
-//           >
-//             <div className="rounded-2xl p-8">
-//               <h3 className="text-2xl font-semibold mb-6">My Journey</h3>
-//               <p className="text-gray-300 mb-6">
-//                 "I am a Full Stack Developer with a strong foundation in the
-//                 MERN stack. I have completed professional internships at Softpro
-//                 India Computer Consultants and Zidio Development, where I gained
-//                 hands-on experience building real-world web solutions.
-//               </p>
-//               <p className="text-gray-300 mb-12">
-//                 I focus on writing clean, maintainable code and developing
-//                 functional applications that provide a seamless user experience.
-//                 I am passionate about bridging the gap between robust backend
-//                 logic and intuitive frontend design."
-//               </p>
-//               {/* card */}
-//               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-//                 {aboutInfo.map((data, index) => (
-//                   <div
-//                     key={index}
-//                     className="bg-dark-300 rounded-2xl p-6 transition-transform duration-300 hover:-translate-y-2 cursor-pointer"
-//                   >
-//                     <div className="text-purple text-4xl mb-4">
-//                       <data.icon />
-//                     </div>
-//                     <h3 className="text-xl font-semibold mb-3">{data.title}</h3>
-//                     <p className="text-gray-400">{data.description}</p>
-//                   </div>
-//                 ))}
-//               </div>
-//             </div>
-//           </motion.div>
-//         </div>
-//       </div>
-//     </motion.div>
-//   );
-// };
 
-// export default About;
-
-import React from "react";
-import { motion } from "framer-motion";
+import { motion as Motion, useReducedMotion } from "framer-motion";
 import { aboutInfo } from "../assets/assets";
 
 const About = () => {
-  return (
-    <motion.section
-      id="about"
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
-      className="py-20 bg-dark-200"
-    >
-      <div className="max-w-7xl mx-auto px-6">
+  const shouldReduceMotion = useReducedMotion();
 
-        {/* Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold">
+  return (
+    <section
+      id="about"
+      aria-labelledby="about-heading"
+      className="bg-dark-200 py-16 sm:py-20"
+    >
+      <div className="mx-auto max-w-6xl px-5 sm:px-8">
+        <div className="mb-8 text-center sm:mb-10">
+          <h2 id="about-heading" className="text-3xl font-bold text-white sm:text-4xl">
             About <span className="text-purple">Me</span>
           </h2>
-
-          <p className="text-gray-400 mt-4 max-w-3xl mx-auto">
-            Get to know more about my journey, experience, and passion for
-            building modern, scalable web applications.
-          </p>
         </div>
 
-        {/* About Content */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="bg-dark-300 rounded-3xl p-8 md:p-12"
-        >
-          <h3 className="text-3xl font-semibold mb-6 text-white">
-            My Journey
-          </h3>
-
-          <p className="text-gray-300 leading-8 mb-6">
-            I’m a passionate{" "}
-            <span className="text-purple font-semibold">
-              Frontend-Focused Full Stack Developer
-            </span>{" "}
-            with a Bachelor's degree in Computer Science and Engineering.
-            I have completed professional internships at{" "}
-            <span className="text-white font-medium">Softpro India</span> and{" "}
-            <span className="text-white font-medium">
-              Zidio Development
-            </span>
-            , where I gained hands-on experience building real-world web
-            applications using React.js, Node.js, Express.js, and MongoDB.
-          </p>
-
-          <p className="text-gray-300 leading-8 mb-6">
-            I enjoy designing responsive user interfaces, developing scalable
-            REST APIs, integrating databases, and writing clean, maintainable
-            code. My goal is to create secure, high-performance applications
-            that provide an excellent user experience while following modern
-            development practices.
-          </p>
-
-          <p className="text-gray-300 leading-8">
-            As a recent Computer Science graduate, I am actively seeking
-            opportunities as a{" "}
-            <span className="text-purple font-semibold">
-              Frontend Developer
-            </span>
-            ,{" "}
-            <span className="text-purple font-semibold">
-              Full Stack Developer
-            </span>{" "}
-            or{" "}
-            <span className="text-purple font-semibold">
-              Software Engineer
-            </span>
-            . I am eager to contribute to innovative projects, solve real-world
-            challenges, and continuously enhance my technical expertise.
-          </p>
-        </motion.div>
-
-        {/* Stats */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-
-          <motion.div
-            whileHover={{ y: -8 }}
-            className="bg-dark-300 rounded-2xl p-6 text-center border border-gray-700 hover:border-purple transition-all duration-300"
+        <div className="grid items-start gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12">
+          <Motion.div
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.5, ease: "easeOut" }}
           >
-            <h3 className="text-4xl font-bold text-purple mb-2">6+</h3>
-            <p className="text-gray-400">Projects Completed</p>
-          </motion.div>
+            <p className="text-base leading-7 text-gray-300 sm:text-lg sm:leading-8">
+              I’m a B.Tech graduate in Computer Science &amp; Design and an entry-level software developer focused on React.js and frontend development. Through hands-on projects and internships, I’ve gained practical experience building responsive interfaces and working with backend APIs, authentication, databases, and application workflows.
+            </p>
+            <p className="mt-4 text-base leading-7 text-gray-300 sm:text-lg sm:leading-8">
+              I enjoy turning ideas into useful, user-focused web applications. I’m looking to contribute to a development team, solve real-world problems, and continue growing as a software developer.
+            </p>
 
-          <motion.div
-            whileHover={{ y: -8 }}
-            className="bg-dark-300 rounded-2xl p-6 text-center border border-gray-700 hover:border-purple transition-all duration-300"
-          >
-            <h3 className="text-4xl font-bold text-purple mb-2">2</h3>
-            <p className="text-gray-400">Professional Internships</p>
-          </motion.div>
-
-          <motion.div
-            whileHover={{ y: -8 }}
-            className="bg-dark-300 rounded-2xl p-6 text-center border border-gray-700 hover:border-purple transition-all duration-300"
-          >
-            <h3 className="text-4xl font-bold text-purple mb-2">MERN</h3>
-            <p className="text-gray-400">Tech Stack</p>
-          </motion.div>
-
-          <motion.div
-            whileHover={{ y: -8 }}
-            className="bg-dark-300 rounded-2xl p-6 text-center border border-gray-700 hover:border-purple transition-all duration-300"
-          >
-            <h3 className="text-4xl font-bold text-purple mb-2">2026</h3>
-            <p className="text-gray-400">B.Tech Graduate</p>
-          </motion.div>
-
-        </div>
-
-        {/* About Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-14">
-          {aboutInfo.map((item, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ y: -8 }}
-              transition={{ duration: 0.3 }}
-              className="bg-dark-300 rounded-2xl p-6 border border-gray-700 hover:border-purple"
-            >
-              <div className="text-purple text-4xl mb-4">
-                <item.icon />
-              </div>
-
-              <h3 className="text-xl font-semibold mb-3">
-                {item.title}
+            <div className="mt-7 border-l-2 border-purple/60 pl-4">
+              <p className="text-xs font-semibold uppercase tracking-widest text-purple">Education</p>
+              <h3 className="mt-2 text-base font-semibold text-white sm:text-lg">
+                B.Tech — Computer Science &amp; Design
               </h3>
-
-              <p className="text-gray-400">
-                {item.description}
+              <p className="mt-1 text-sm leading-6 text-gray-300">
+                Seth Vishambhar Nath Institute of Engineering &amp; Technology (SVNIET)
               </p>
-            </motion.div>
-          ))}
+              <p className="text-sm leading-6 text-gray-400">
+                Affiliated with Dr. A.P.J. Abdul Kalam Technical University (AKTU), Uttar Pradesh.
+              </p>
+            </div>
+          </Motion.div>
+
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
+            {aboutInfo.map((item, index) => (
+              <Motion.article
+                key={item.title}
+                initial={shouldReduceMotion ? false : { opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{
+                  duration: shouldReduceMotion ? 0 : 0.45,
+                  delay: shouldReduceMotion ? 0 : index * 0.08,
+                  ease: "easeOut",
+                }}
+                whileHover={shouldReduceMotion ? undefined : { y: -3 }}
+                className="flex items-start gap-3 rounded-lg border border-white/10 bg-dark-300 p-4 transition-colors duration-300 hover:border-purple/40 motion-reduce:transition-none"
+              >
+                <item.icon aria-hidden="true" className="mt-0.5 h-5 w-5 shrink-0 text-purple" />
+                <div>
+                  <h3 className="font-semibold text-white">{item.title}</h3>
+                  <p className="mt-1 text-sm leading-5 text-gray-400">{item.description}</p>
+                </div>
+              </Motion.article>
+            ))}
+          </div>
         </div>
 
       </div>
-    </motion.section>
+    </section>
   );
 };
 
