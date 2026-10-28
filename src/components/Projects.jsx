@@ -60,7 +60,7 @@ const Projects = () => {
           role="region"
           aria-label="Featured projects"
           tabIndex={0}
-          className="projects-scroll mx-auto flex max-w-6xl snap-x snap-mandatory gap-5 overflow-x-auto pb-3 sm:gap-6"
+          className="projects-scroll mx-auto flex max-w-6xl snap-x snap-mandatory gap-5 overflow-x-auto sm:gap-6"
         >
           {projects.map((project, index) => (
             <div
