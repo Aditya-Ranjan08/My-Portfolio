@@ -6,6 +6,7 @@ import adityaImg from '../assets/aditya.png';
 import blogImg1 from '../assets/blog.png';
 import jobImg2 from '../assets/job.jpg';
 import resumeImg3 from '../assets/resume.png';
+import smartExamImg from '../assets/smartexam.jpg';
 
 import zidioCert from './files/Aditya_zidio.pdf';
 import softproInternCert from './files/Aditya document2.pdf';
@@ -130,6 +131,15 @@ export const projects = [
     tech: ["React.js", "Node.js", "MongoDB Atlas", "JWT", "CORS", "Tailwind CSS"],
     demo: "https://adi-resume-builder.vercel.app/",
     code: "https://github.com/Aditya-Ranjan08/Resume-Builder.git",
+  },
+  {
+    title: "SmartExam",
+    category: "Full Stack",
+    description: "Online examination management system with separate admin and student portals, exam management, results, reporting, and real-time student presence.",
+    image: smartExamImg,
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Socket.IO", "Tailwind CSS"],
+    demo: "https://smart-exam-oems.vercel.app/",
+    code: "https://github.com/Aditya-Ranjan08/SmartExam",
   }
 
 ];
