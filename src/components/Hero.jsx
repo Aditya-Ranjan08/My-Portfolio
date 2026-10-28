@@ -30,7 +30,7 @@ const Hero = () => {
 
           <Motion.h1
             variants={entrance}
-            className="text-[2rem] font-bold leading-[1.14] text-white sm:text-5xl lg:text-[3.35rem]"
+            className="text-[clamp(1.5rem,7vw,2rem)] font-bold leading-[1.14] text-white sm:text-5xl lg:text-[3.35rem]"
           >
             <span className="block">Software Developer</span>
             <span className="mt-1 block">

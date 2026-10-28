@@ -33,17 +33,23 @@
 }
 
 html {
+  overflow-x: clip;
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
   scrollbar-gutter: stable;
 }
 
 body {
+  min-width: 0;
   background-color: var(--bg-primary);
   background-image:
     radial-gradient(900px circle at 8% -8%, rgb(var(--accent-rgb) / 7%), transparent 56%),
     radial-gradient(880px circle at 96% 36%, rgb(var(--accent-secondary-rgb) / 4%), transparent 62%);
   color: var(--text-primary);
+}
+
+.grid > * {
+  min-width: 0;
 }
 
 section[id] {
