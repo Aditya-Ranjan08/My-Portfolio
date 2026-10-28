@@ -58,6 +58,47 @@ section[id]:nth-of-type(even):not(#home) {
   background-image: radial-gradient(ellipse 70% 55% at 88% 0%, rgb(var(--accent-secondary-rgb) / 2.5%), transparent 72%);
 }
 
+.projects-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(var(--accent-rgb) / 55%) transparent;
+}
+
+.projects-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.projects-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.projects-scroll::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgb(var(--accent-rgb) / 50%);
+}
+
+.project-card-item {
+  width: min(85vw, 28rem);
+}
+
+@media (min-width: 640px) {
+  .project-card-item {
+    width: calc((100% - 1.5rem) / 2);
+  }
+}
+
+@media (min-width: 1024px) {
+  .project-card-item {
+    width: calc((100% - 3rem) / 3);
+  }
+}
+
+.project-carousel-button {
+  width: 2.75rem;
+  height: 2.75rem;
+  min-height: 0;
+  padding: 0;
+}
+
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;

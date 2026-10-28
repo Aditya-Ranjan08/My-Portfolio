@@ -1,7 +1,23 @@
+import { useRef } from "react";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { projects } from "../assets/assets";
 import ProjectCard from "./ProjectCard";
 
 const Projects = () => {
+  const projectsRef = useRef(null);
+
+  const scrollProjects = (direction) => {
+    const carousel = projectsRef.current;
+    const firstCard = carousel?.firstElementChild;
+
+    if (!carousel || !firstCard) return;
+
+    const gap = Number.parseFloat(window.getComputedStyle(carousel).columnGap) || 0;
+    const scrollAmount = firstCard.getBoundingClientRect().width + gap;
+
+    carousel.scrollBy({ left: direction * scrollAmount, behavior: "smooth" });
+  };
+
   return (
     <section id="projects" className="bg-dark-200 py-16 sm:py-20">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
@@ -17,9 +33,42 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="mx-auto grid max-w-6xl grid-cols-1 items-stretch gap-5 sm:gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mb-4 flex justify-end gap-3">
+          <button
+            type="button"
+            aria-label="Scroll to previous project"
+            aria-controls="projects-carousel"
+            onClick={() => scrollProjects(-1)}
+            className="project-carousel-button button-control button-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple"
+          >
+            <FaChevronLeft aria-hidden="true" />
+          </button>
+          <button
+            type="button"
+            aria-label="Scroll to next project"
+            aria-controls="projects-carousel"
+            onClick={() => scrollProjects(1)}
+            className="project-carousel-button button-control button-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple"
+          >
+            <FaChevronRight aria-hidden="true" />
+          </button>
+        </div>
+
+        <div
+          id="projects-carousel"
+          ref={projectsRef}
+          role="region"
+          aria-label="Featured projects"
+          tabIndex={0}
+          className="projects-scroll mx-auto flex max-w-6xl snap-x snap-mandatory gap-5 overflow-x-auto pb-3 sm:gap-6"
+        >
           {projects.map((project, index) => (
-            <ProjectCard key={project.title.trim()} {...project} index={index} />
+            <div
+              key={project.title.trim()}
+              className="project-card-item shrink-0 snap-start"
+            >
+              <ProjectCard {...project} index={index} />
+            </div>
           ))}
         </div>
       </div>
