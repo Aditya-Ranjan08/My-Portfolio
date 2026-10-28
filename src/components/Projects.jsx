@@ -31,6 +31,9 @@ const Projects = () => {
           <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-gray-400 sm:text-lg">
             Real-world web applications built with React.js and full-stack technologies.
           </p>
+          <p className="mt-3 text-sm font-medium text-gray-400" aria-live="polite">
+            {projects.length} {projects.length === 1 ? "project" : "projects"} total
+          </p>
         </div>
 
         <div className="mb-4 flex justify-end gap-3">
@@ -60,7 +63,7 @@ const Projects = () => {
           role="region"
           aria-label="Featured projects"
           tabIndex={0}
-          className="projects-scroll mx-auto flex max-w-6xl snap-x snap-mandatory gap-5 overflow-x-auto sm:gap-6"
+          className="projects-scroll mx-auto flex max-w-6xl snap-x snap-mandatory gap-5 overflow-x-hidden sm:gap-6"
         >
           {projects.map((project, index) => (
             <div

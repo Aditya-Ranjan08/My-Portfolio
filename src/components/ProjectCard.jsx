@@ -39,7 +39,7 @@ const ProjectCard = ({ title, category, description, image, tech = [], demo, cod
                 <h3 className="text-xl font-semibold text-white sm:text-2xl">
                     {projectTitle}
                 </h3>
-                <p className="mt-3 text-sm leading-6 text-gray-400 sm:text-base">
+                <p className="mt-3 h-[4.5rem] overflow-hidden text-ellipsis text-sm leading-6 text-gray-400 line-clamp-3 sm:text-base">
                     {description}
                 </p>
 
