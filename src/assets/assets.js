@@ -16,7 +16,7 @@ import fullstackCert from './files/Aditya Ranjan_certificate.pdf';
 import hclCert from './files/Aditya document1.pdf';
 import ibmCert from './files/Completion Certificate _ SkillsBuild.pdf';
 
-import myResume from './files/Aditya_Resume..pdf';
+import myResume from './files/Aditya_ResumeA.pdf';
 
 export const assets = {
     
