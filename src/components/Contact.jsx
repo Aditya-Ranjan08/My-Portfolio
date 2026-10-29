@@ -105,7 +105,7 @@ const Contact = () => {
               </li>
               <li className="flex items-start gap-3">
                 <FaPhone aria-hidden="true" className="mt-1 h-4 w-4 shrink-0 text-purple" />
-                <a href="tel:9628137350" className="text-sm text-gray-300 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-purple sm:text-base">
+                <a href="tel:9628137355" className="text-sm text-gray-300 transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-purple sm:text-base">
                   9628137355
                 </a>
               </li>

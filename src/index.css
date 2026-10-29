@@ -73,7 +73,7 @@ section[id]:nth-of-type(even):not(#home) {
 }
 
 .project-card-item {
-  width: min(85vw, 28rem);
+  width: min(85vw, 100%, 28rem);
 }
 
 @media (min-width: 640px) {

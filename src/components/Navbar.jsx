@@ -88,14 +88,16 @@ const Navbar = () => {
           ))}
         </div>
 
-        <a
-          href={assets.myResume}
-          download="Aditya_Ranjan_Resume.pdf"
-          className="button-control button-primary hidden shrink-0 lg:inline-flex"
-        >
-          <FaDownload aria-hidden="true" className="text-xs text-white/85" />
-          Resume
-        </a>
+        <div className="hidden shrink-0 lg:block">
+          <a
+            href={assets.myResume}
+            download="Aditya_Ranjan_Resume.pdf"
+            className="button-control button-primary"
+          >
+            <FaDownload aria-hidden="true" className="text-xs text-white/85" />
+            Resume
+          </a>
+        </div>
 
         <button
           type="button"
