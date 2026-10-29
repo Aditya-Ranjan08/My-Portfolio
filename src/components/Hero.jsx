@@ -17,10 +17,10 @@ const Hero = () => {
         hidden: { opacity: 0 },
         visible: { opacity: 1, transition: { staggerChildren: 0.12, delayChildren: 0.08 } },
       }}
-      className="hero-surface relative isolate flex min-h-[calc(100svh-4rem)] items-center overflow-hidden py-14 sm:py-16 lg:py-12"
+      className="hero-surface relative isolate flex min-h-[calc(100svh-4rem)] items-center overflow-hidden py-10 sm:py-14 lg:py-12"
     >
-      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-12 px-5 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:grid-rows-[auto_auto] lg:gap-x-16 lg:gap-y-0">
-        <div className="order-1 max-w-3xl">
+      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-8 px-5 sm:gap-10 sm:px-8 md:grid-cols-[1.1fr_0.9fr] md:gap-x-8 md:gap-y-0 lg:gap-x-14">
+        <div className="order-1 min-w-0 max-w-3xl">
           <Motion.p
             variants={entrance}
             className="mb-4 text-sm font-semibold uppercase tracking-[0.12em] text-purple sm:text-base"
@@ -30,7 +30,7 @@ const Hero = () => {
 
           <Motion.h1
             variants={entrance}
-            className="text-[clamp(1.5rem,7vw,2rem)] font-bold leading-[1.14] text-white sm:text-5xl lg:text-[3.35rem]"
+            className="text-[clamp(1.75rem,7vw,2rem)] font-bold leading-[1.14] text-white sm:text-5xl lg:text-[3.35rem]"
           >
             <span className="block">Software Developer</span>
             <span className="mt-1 block">
@@ -48,23 +48,55 @@ const Hero = () => {
 
           <Motion.div
             variants={entrance}
-            className="mt-8 flex flex-col gap-3 min-[380px]:flex-row min-[380px]:flex-wrap"
+            className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap"
           >
             <a
               href="#projects"
-              className="button-control button-primary shadow-md shadow-purple/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple"
+              className="button-control button-primary w-full shadow-md shadow-purple/15 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple sm:w-auto"
             >
               View My Projects
             </a>
             <a
               href={assets.myResume}
               download="Aditya_Ranjan_Resume.pdf"
-              className="button-control button-secondary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple"
+              className="button-control button-secondary w-full focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple sm:w-auto"
             >
               Download Resume
             </a>
           </Motion.div>
 
+          <Motion.div
+            variants={entrance}
+            className="mt-6 flex flex-wrap items-center gap-2 sm:mt-7 sm:gap-2.5"
+          >
+            <span className="mr-1 text-[0.65rem] font-semibold uppercase tracking-[0.14em] text-white/45 sm:text-xs">
+              Let&apos;s connect
+            </span>
+            <a
+              href="https://github.com/Aditya-Ranjan08"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub profile"
+              className="group inline-flex min-h-10 items-center gap-2 rounded-md border border-white/10 bg-white/[0.03] py-1.5 pl-1.5 pr-3 text-sm font-medium text-white/75 transition-colors duration-200 hover:border-purple/40 hover:bg-purple/10 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-purple"
+            >
+              <span className="flex h-7 w-7 items-center justify-center rounded bg-white/5 text-white/75 transition-colors group-hover:bg-purple/15 group-hover:text-purple">
+                <FaGithub aria-hidden="true" className="text-sm" />
+              </span>
+              GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/aditya-ranjan-b3a85836b/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn profile"
+              className="group inline-flex min-h-10 items-center gap-2 rounded-md border border-white/10 bg-white/[0.03] py-1.5 pl-1.5 pr-3 text-sm font-medium text-white/75 transition-colors duration-200 hover:border-purple/40 hover:bg-purple/10 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-purple"
+            >
+              <span className="flex h-7 w-7 items-center justify-center rounded bg-white/5 text-white/75 transition-colors group-hover:bg-purple/15 group-hover:text-purple">
+                <FaLinkedin aria-hidden="true" className="text-sm" />
+              </span>
+              LinkedIn
+            </a>
+          </Motion.div>
         </div>
 
         <Motion.div
@@ -74,7 +106,7 @@ const Hero = () => {
           }}
           whileHover={{ scale: 1.015 }}
           transition={{ duration: 0.25, ease: "easeOut" }}
-          className="order-2 mx-auto w-full max-w-68 sm:max-w-80 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:max-w-100"
+          className="order-2 mx-auto w-full max-w-48 sm:max-w-64 md:max-w-64 lg:max-w-80 xl:max-w-96"
         >
           <div className="profile-frame aspect-square overflow-hidden rounded-full border border-purple/50 bg-dark-300 p-2 sm:p-3">
             <img
@@ -86,38 +118,6 @@ const Hero = () => {
           </div>
         </Motion.div>
 
-        <Motion.div
-          variants={entrance}
-          className="order-3 flex flex-wrap items-center gap-2.5 lg:col-start-1 lg:row-start-2"
-        >
-          <span className="mr-1 text-xs font-semibold uppercase tracking-[0.16em] text-white/45">
-            Connect
-          </span>
-          <a
-            href="https://github.com/Aditya-Ranjan08"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub profile"
-            className="group inline-flex min-h-10 items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] py-1.5 pl-1.5 pr-3.5 text-sm font-medium text-white/75 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-purple/40 hover:bg-purple/10 hover:text-white hover:shadow-[0_6px_20px_rgba(139,92,246,0.12)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-purple"
-          >
-            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-white/80 transition-colors group-hover:bg-purple/20 group-hover:text-purple">
-              <FaGithub aria-hidden="true" className="text-sm" />
-            </span>
-            GitHub
-          </a>
-          <a
-            href="https://www.linkedin.com/in/aditya-ranjan-b3a85836b/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn profile"
-            className="group inline-flex min-h-10 items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] py-1.5 pl-1.5 pr-3.5 text-sm font-medium text-white/75 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-purple/40 hover:bg-purple/10 hover:text-white hover:shadow-[0_6px_20px_rgba(139,92,246,0.12)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-purple"
-          >
-            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-white/80 transition-colors group-hover:bg-purple/20 group-hover:text-purple">
-              <FaLinkedin aria-hidden="true" className="text-sm" />
-            </span>
-            LinkedIn
-          </a>
-        </Motion.div>
       </div>
     </Motion.section>
   );
