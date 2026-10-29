@@ -80,18 +80,18 @@ const Contact = () => {
       className="bg-dark-200 py-16 sm:py-20"
     >
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
-        <Motion.div {...reveal()} className="mb-9 sm:mb-12">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-purple">Contact</p>
-          <h2 id="contact-heading" className="text-3xl font-bold leading-tight text-white sm:text-4xl">
-            Let&apos;s Build Something Together
-          </h2>
-          <p className="mt-4 max-w-2xl text-base leading-7 text-gray-400 sm:text-lg">
-            I&apos;m open to software development, frontend, React.js and full-stack opportunities.
-          </p>
-        </Motion.div>
+        <div className="grid items-start gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12">
+          <Motion.div {...reveal()} className="space-y-7 lg:pr-2">
+            <div>
+              <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-purple">Contact</p>
+              <h2 id="contact-heading" className="text-3xl font-bold leading-tight text-white sm:text-4xl">
+                Let&apos;s Build Something Together
+              </h2>
+              <p className="mt-4 max-w-2xl text-base leading-7 text-gray-400 sm:text-lg">
+                I&apos;m open to software development, frontend, React.js and full-stack opportunities.
+              </p>
+            </div>
 
-        <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12">
-          <Motion.div {...reveal(0.08)} className="space-y-6">
             <p className="max-w-md text-base leading-7 text-gray-300">
               I&apos;m an entry-level developer looking to contribute, learn, and grow with a team building useful web applications.
             </p>
@@ -131,7 +131,7 @@ const Contact = () => {
             </div>
           </Motion.div>
 
-          <Motion.div {...reveal(0.16)}>
+          <Motion.div {...reveal(0.08)} className="min-w-0">
             <form onSubmit={onSubmit} className="space-y-5 rounded-lg border border-white/10 bg-dark-300 p-5 sm:p-6">
               <div>
                 <label htmlFor="contact-name" className="mb-2 block text-sm font-medium text-gray-200">
