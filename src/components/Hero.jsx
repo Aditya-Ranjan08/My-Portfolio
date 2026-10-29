@@ -88,26 +88,34 @@ const Hero = () => {
 
         <Motion.div
           variants={entrance}
-          className="order-3 flex items-center gap-5 lg:col-start-1 lg:row-start-2"
+          className="order-3 flex flex-wrap items-center gap-2.5 lg:col-start-1 lg:row-start-2"
         >
-          <span className="text-sm text-white/50">Connect</span>
+          <span className="mr-1 text-xs font-semibold uppercase tracking-[0.16em] text-white/45">
+            Connect
+          </span>
           <a
             href="https://github.com/Aditya-Ranjan08"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub profile"
-            className="text-xl text-white/65 transition-colors hover:text-purple focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-purple"
+            className="group inline-flex min-h-10 items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] py-1.5 pl-1.5 pr-3.5 text-sm font-medium text-white/75 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-purple/40 hover:bg-purple/10 hover:text-white hover:shadow-[0_6px_20px_rgba(139,92,246,0.12)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-purple"
           >
-            <FaGithub aria-hidden="true" />
+            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-white/80 transition-colors group-hover:bg-purple/20 group-hover:text-purple">
+              <FaGithub aria-hidden="true" className="text-sm" />
+            </span>
+            GitHub
           </a>
           <a
             href="https://www.linkedin.com/in/aditya-ranjan-b3a85836b/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn profile"
-            className="text-xl text-white/65 transition-colors hover:text-purple focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-purple"
+            className="group inline-flex min-h-10 items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] py-1.5 pl-1.5 pr-3.5 text-sm font-medium text-white/75 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-purple/40 hover:bg-purple/10 hover:text-white hover:shadow-[0_6px_20px_rgba(139,92,246,0.12)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-purple"
           >
-            <FaLinkedin aria-hidden="true" />
+            <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white/10 text-white/80 transition-colors group-hover:bg-purple/20 group-hover:text-purple">
+              <FaLinkedin aria-hidden="true" className="text-sm" />
+            </span>
+            LinkedIn
           </a>
         </Motion.div>
       </div>
