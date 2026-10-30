@@ -4,6 +4,7 @@ import { VscVscode } from 'react-icons/vsc';
 import adityaImg from '../assets/aditya.png';
 
 import blogImg1 from '../assets/blog.png';
+import excelAnalyticsImg from '../assets/excel-analytics-preview.svg';
 import jobImg2 from '../assets/job.jpg';
 import resumeImg3 from '../assets/resume.png';
 import smartExamImg from '../assets/smartexam.jpg';
@@ -108,38 +109,47 @@ export const projects = [
 {
     title: "Blogging Platform",
     category: "Full Stack",
-    description: "Full-stack blogging application with admin and user panels for creating and managing blog posts.",
+  description: "A full-stack publishing platform with separate admin and reader experiences. Create and manage posts, secure accounts, and add Cloudinary-hosted images to bring each article to life.",
     image: blogImg1,
-    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Bootstrap"],
+  tech: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "JWT", "Cloudinary", "React Hook Form"],
     demo: "https://blogging-platform-adi.vercel.app/",
     code: "https://github.com/Aditya-Ranjan08/Blogging-Platform.git",
   },
   {
     title: "Job Portal",
     category: "Web Application",
-    description: "Job portal for discovering jobs, posting openings, and tracking applications.",
+  description: "A modern hiring platform that brings job discovery and recruiting into one place. Candidates can explore relevant openings while employers manage listings and applications with secure sign-in.",
     image: jobImg2,
-    tech: ["React.js", "Clerk", "Supabase", "Shadcn UI", "Tailwind CSS"],
+  tech: ["React.js", "Tailwind CSS", "Clerk", "Supabase", "shadcn/ui", "React Hook Form"],
     demo: "https://job-portal-adi.vercel.app/", 
     code: "https://github.com/Aditya-Ranjan08/Job-Portal.git",
   },
   {
     title: "Resume Builder",
     category: "Full Stack",
-    description: "Full-stack resume builder for editing resume details and exporting a polished PDF.",
+  description: "Build a polished, professional resume with an editable workflow and a live preview. Refine resume content with AI assistance, then export a ready-to-share PDF.",
     image: resumeImg3,
-    tech: ["React.js", "Node.js", "MongoDB Atlas", "JWT", "CORS", "Tailwind CSS"],
+  tech: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "JWT", "OpenAI", "jsPDF"],
     demo: "https://adi-resume-builder.vercel.app/",
     code: "https://github.com/Aditya-Ranjan08/Resume-Builder.git",
   },
   {
     title: "SmartExam",
     category: "Full Stack",
-    description: "Online examination management system with separate admin and student portals, exam management, results, reporting, and real-time student presence.",
+  description: "An online examination system with dedicated admin and student portals. Create and manage exams, follow student participation in real time, and review results with clear reporting.",
     image: smartExamImg,
-    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "Socket.IO", "Tailwind CSS"],
+  tech: ["React.js", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "Socket.IO", "Recharts", "JWT"],
     demo: "https://smart-exam-oems.vercel.app/",
     code: "https://github.com/Aditya-Ranjan08/SmartExam",
+  },
+  {
+    title: "Excel Analytics",
+    category: "Data Analytics",
+  description: "Turn spreadsheet data into an interactive report. Upload and preview Excel workbooks, explore charts and trends, and get plain-language insights from one dashboard.",
+    image: excelAnalyticsImg,
+  tech: ["React.js", "Tailwind CSS", "Chart.js", "Recharts", "Node.js", "Express.js", "MongoDB", "SheetJS (XLSX)"],
+    demo: "https://adi-resume-builder.vercel.app/",
+    code: "https://github.com/Aditya-Ranjan08/Excel-analytics",
   }
 
 ];
