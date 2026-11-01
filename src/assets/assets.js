@@ -8,6 +8,7 @@ import excelAnalyticsImg from '../assets/excel-analytics-preview.svg';
 import jobImg2 from '../assets/job.jpg';
 import resumeImg3 from '../assets/resume.png';
 import smartExamImg from '../assets/smartexam.jpg';
+import translyImg from '../assets/transly-preview.svg';
 
 import zidioCert from './files/Aditya_zidio.pdf';
 import softproInternCert from './files/Aditya document2.pdf';
@@ -106,6 +107,15 @@ export const skills = [
 
 
 export const projects = [
+  {
+    title: "Transly",
+    category: "Document Translation",
+    description: "Translate text, PDFs, and images in one place. Transly combines multiple translation providers with OCR-powered text extraction and secure user accounts.",
+    image: translyImg,
+    tech: ["React.js", "Vite", "Tailwind CSS", "Express.js", "MongoDB", "JWT", "Tesseract.js", "PDF.js"],
+    demo: "https://transly-anything.vercel.app/",
+    code: "https://github.com/Aditya-Ranjan08/Transly-Anything",
+  },
 {
     title: "Blogging Platform",
     category: "Full Stack",
