@@ -158,7 +158,7 @@ export const projects = [
   description: "Turn spreadsheet data into an interactive report. Upload and preview Excel workbooks, explore charts and trends, and get plain-language insights from one dashboard.",
     image: excelAnalyticsImg,
   tech: ["React.js", "Tailwind CSS", "Chart.js", "Recharts", "Node.js", "Express.js", "MongoDB", "SheetJS (XLSX)"],
-    demo: "https://adi-resume-builder.vercel.app/",
+    demo: "https://excel-analytics-adi.vercel.app/",
     code: "https://github.com/Aditya-Ranjan08/Excel-analytics",
   }
 
